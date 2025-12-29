@@ -6,6 +6,17 @@ on:
       - 'master'
     tags:
       - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: '版本号（可选）'
+        required: false
+        default: 'manual'
+      create_release:
+        description: '是否创建 Release'
+        required: true
+        type: boolean
+        default: false
 
 permissions:
   contents: write
